@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-i3k)u5_eiqj1j@)n(0jrf2utl%p6mxg37sqn9mo-!96_($%_+b
 DEBUG = True
 
 
-ALLOWED_HOSTS = ["api.kutubxona2.librarynetbuilder.uz", "127.0.0.1"]
+ALLOWED_HOSTS = ["api.kutubxona2.librarynetbuilder.uz", "164.92.140.200", "127.0.0.1"]
 CORS_ORIGIN_ALLOW_ALL = True
 CSRF_TRUSTED_ORIGINS = ['https://kutubxona2.librarynetbuilder.uz']
 CSRF_COOKIE_SECURE = False
