@@ -19,7 +19,8 @@ class HttpRequestThread(Thread):
                 self.status_code = 200
                 data = json.loads(response.content)
                 for i in data:
-                    i['url']=self.url+'/book/'+str(i['id'])
+                    front_url = self.url[12::]  
+                    i['url']='https://'+front_url+'/book/'+str(i['id'])
                 self.results +=data
 
         except ConnectionError:
