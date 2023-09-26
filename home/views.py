@@ -43,14 +43,15 @@ def search_book(request):
 def search(request):
     name = request.GET.get('name')
     URL = 'https://konstructor.librarynetbuilder.uz'
+    # URL = 'http://127.0.0.1:8000/'
 
-    urls = [i['url'] for i in json.loads(requests.get(URL).text)]
+    libraries = [i for i in json.loads(requests.get(URL).text)]
 
-    threads = [HttpRequestThread(url=url,name=name) for url in urls]
+    threads = [HttpRequestThread(library=library,name=name) for library in libraries]
   
     [t.start() for t in threads]
     [t.join() for t in threads]
-
+    
     natija = [t.results for t in threads if t.status_code]
    
     return Response(data=natija)
