@@ -20,10 +20,10 @@ class HttpRequestThread(Thread):
                 data = json.loads(response.content)
                 for i in data:
                     front_url = self.library['url']
-                    
+                    front_url = front_url.replace('8', '3') 
                     i['name'] = self.library['name']
                     i['location'] = self.library['location']
-                    i['url']="https://"+front_url[12:]+"book/"+str(i['id'])
+                    i['url']="http://"+front_url[12:]+"book/"+str(i['id'])
                     
                 self.results +=data
 

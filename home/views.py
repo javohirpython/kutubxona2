@@ -42,8 +42,7 @@ def search_book(request):
 @api_view(['GET'])
 def search(request):
     name = request.GET.get('name')
-    URL = 'https://konstructor.librarynetbuilder.uz'
-    # URL = 'http://127.0.0.1:8000/'
+    URL = 'http://127.0.0.1:8000/'
 
     libraries = [i for i in json.loads(requests.get(URL).text)]
 
